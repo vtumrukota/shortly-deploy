@@ -26,6 +26,7 @@ module.exports = function(grunt) {
     jshint: {
       files: [
         // Add filespec list here
+        'shortly-deploy/*'
       ],
       options: {
         force: 'true',
@@ -108,5 +109,6 @@ module.exports = function(grunt) {
     // add your deploy tasks here
   ]);
 
+  grunt.registerTask('default', ['uglify', 'jshint', 'watch', 'concat', 'cssmin']);
 
 };
