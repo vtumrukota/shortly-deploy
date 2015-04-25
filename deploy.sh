@@ -34,7 +34,7 @@ KUDU_SYNC_CMD=${KUDU_SYNC_CMD//\"}
 if [[ ! -n "$DEPLOYMENT_SOURCE" ]]; then
   DEPLOYMENT_SOURCE=$SCRIPT_DIR
 fi
-
+echo '1'
 if [[ ! -n "$NEXT_MANIFEST_PATH" ]]; then
   NEXT_MANIFEST_PATH=$ARTIFACTS/manifest
 
@@ -42,13 +42,13 @@ if [[ ! -n "$NEXT_MANIFEST_PATH" ]]; then
     PREVIOUS_MANIFEST_PATH=$NEXT_MANIFEST_PATH
   fi
 fi
-
+echo '2'
 if [[ ! -n "$DEPLOYMENT_TARGET" ]]; then
   DEPLOYMENT_TARGET=$ARTIFACTS/wwwroot
 else
   KUDU_SERVICE=true
 fi
-
+echo '3'
 if [[ ! -n "$KUDU_SYNC_CMD" ]]; then
   # Install kudu sync
   echo Installing Kudu Sync
