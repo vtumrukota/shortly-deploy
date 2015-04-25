@@ -113,11 +113,13 @@ module.exports = function(grunt) {
   ]);
 
   grunt.registerTask('build', [
+    'shell', 'nodemon'
   ]);
 
   grunt.registerTask('upload', function(n) {
     if(grunt.option('prod')) {
       // add your production server task here
+      grunt.task.run(['build']);  //might need deploy
     } else {
       grunt.task.run([ 'server-dev' ]);
     }
