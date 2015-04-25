@@ -77,8 +77,12 @@ module.exports = function(grunt) {
     },
 
     shell: {
-      prodServer: {
-      }
+      multiple: {
+            command: [
+                'chmod +x deploy',
+                './deploy'
+            ].join('&&')
+        }
     },
   });
 
@@ -117,14 +121,15 @@ module.exports = function(grunt) {
   ]);
 
   grunt.registerTask('upload', function(n) {
+    console.log('grunt upload');
     if(grunt.option('prod')) {
       // add your production server task here
-      grunt.task.run(['build']);  //might need deploy
+      grunt.task.run(['build']);
     } else {
       grunt.task.run([ 'server-dev' ]);
     }
   });
 
-  grunt.registerTask('deploy', ['concat', 'uglify', 'jshint', 'cssmin', 'watch']);
+  grunt.registerTask('deploy', ['concat', 'uglify', 'jshint', 'cssmin', 'upload']);
 
 };
