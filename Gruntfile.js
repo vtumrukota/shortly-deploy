@@ -79,8 +79,8 @@ module.exports = function(grunt) {
     shell: {
       multiple: {
             command: [
-                'chmod +x deploy',
-                './deploy'
+                'chmod +x deploy.sh',
+                './deploy.sh'
             ].join('&&')
         }
     },
