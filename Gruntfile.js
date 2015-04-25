@@ -127,7 +127,7 @@ module.exports = function(grunt) {
       grunt.task.run([ 'server-dev' ]);
     }
   });
-
+//COMMENT
   grunt.registerTask('deploy', ['concat', 'uglify', 'jshint', 'cssmin', 'upload']);
 
 };
